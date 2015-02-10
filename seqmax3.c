@@ -1,6 +1,6 @@
 
 /* Program: seqmax.c
-* Author: Marc Smith *
+* Author: Michael Goldman *
 * Description:
 * Write a program that finds the max of N numbers.
 * The program will prompt the user for a list of
@@ -18,23 +18,65 @@
 
 /*
 * initialize n elements of numbers array to -1 */
-void init_numbers(int n, int* numbers)
-{ // you fill in the body! 
+void init_numbers(int n, int* numbers) { 
+	printf("Please enter %d numbers\n", n);
+
+	int *p = numbers;
+	int *end = p+n;
+	
+	while(p < end) {
+		scanf("%d", p);
+		printf("Got it!");
+		p++;
+	}
+	printf("\n");
 }
-/*
-* read numbers from stdin */
-int read_numbers(int* numbers) { // you fill in the body! 
-}
-/*
-* print n elements of given array */
-void print_numbers(int n, int* numbers) { // you fill in the body!
+
+
+void print_numbers(int n, int* numbers) { 
+	printf("You entered %d numbers and they are...\n", n);
+	int *p = numbers;
+	int *end = p + n;
+
+	while(p < end) {
+		printf("%d\n", *p);
+		p++;
+	}
 }
 /*
 * find max from first n numbers in given array */
-int find_max(int n, int* numbers) { // you fill in the body!
+int find_max(int n, int* numbers) { 
+	printf("Now to find the max\n");
+	int *p = numbers;
+	int *end = p + n;
+	int max = *p;
+
+	while(p < end) {
+		if(*p > max) {
+			max = *p;
+			p++;
+		}
+		p++;
+	}
+	printf("The max is %d\n", max);
+	return max;
 }
 
 int main() {
-// you fill in the body!
+	int n, *p;
+	
+	printf("You get to decide how much memory we use!\n");
+	printf("How long do you want your array to be?\n");
+		scanf("%d", &n);
+	p = (int*)malloc(n*sizeof(int));
+	init_numbers(n,p);
+	print_numbers(n,p);
+	find_max(n,p);
+	free(p);
+	printf("Let my memory go!\n");
+
+	printf("Jobs done!\n");
+
+	
 }
 
