@@ -29,7 +29,7 @@ void init_numbers(int n, int* numbers) {
 
 	while(p < end) {
 		scanf("%d", p);
-		printf("Got it! Next one: ");
+		printf("Got it!");
 		p++;
 	}
 	printf("\n");
