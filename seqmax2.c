@@ -37,7 +37,7 @@ void init_numbers(int n, int* numbers) {
 }
 
 void print_numbers(int n, int* numbers) {
-	printf("You are %d numbers and they are...\n", n);
+	printf("You entered %d numbers and they are...\n", n);
 	int *p = numbers;
 	int *end = p + n;
 	while(p < end) {
@@ -67,12 +67,14 @@ int main() {
 	int array[50], n;
 	int *p = array;
 
-	printf("Lets get some pointers up in here\n");
+	printf("Lets use some pointers now\n");
 	printf("How long do you want your array to be? (Can handle up to 50)\n");
 	scanf("%d", &n);
 
 	init_numbers(n, p);
 	print_numbers(n,p);
 	find_max(n,p);
+
+	printf("Jobs Done!\n");
 
 }
