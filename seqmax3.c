@@ -54,7 +54,6 @@ int find_max(int n, int* numbers) {
 	while(p < end) {
 		if(*p > max) {
 			max = *p;
-			p++;
 		}
 		p++;
 	}
